@@ -224,7 +224,7 @@ function Neo4jD3(_selector, _options) {
     function appendRingToNode(node) {
         return node.append('circle')
                    .attr('class', 'ring')
-                   .attr('r', options.nodeRadius * 1.16)
+                   .attr('r', options.nodeRadius * 1.28)
                    .append('title').text(function(d) {
                        return toString(d);
                    });
@@ -235,18 +235,23 @@ function Neo4jD3(_selector, _options) {
                    .attr('class', function(d) {
                        return 'text' + (icon(d) ? ' icon' : '');
                    })
-                   .attr('fill', '#ffffff')
+                   .attr('fill',function(d) {
+                       if(d.labels[0] === 'Address') {
+                           return '#000000';
+                       }
+                       return '#ffffff';
+                   })
                    .attr('font-size', function(d) {
                        return icon(d) ? (options.nodeRadius + 'px') : '10px';
                    })
                    .attr('pointer-events', 'none')
                    .attr('text-anchor', 'middle')
                    .attr('y', function(d) {
-                       return icon(d) ? (parseInt(Math.round(options.nodeRadius * 0.32)) + 'px') : '4px';
+                       return icon(d) ? (parseInt(Math.round(options.nodeRadius * 0.32)) + 'px') : '30px';
                    })
                    .html(function(d) {
                        var _icon = icon(d);
-                       return _icon ? '&#x' + _icon : d.id;
+                       return _icon ? '&#x' + _icon : d.properties['详细地址'];
                    });
     }
 
