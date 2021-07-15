@@ -239,18 +239,51 @@ function Neo4jD3(_selector, _options) {
                        if(d.labels[0] === 'Address') {
                            return '#000000';
                        }
+                       if(d.labels[0] === 'Phone') {
+                           return '#000000';
+                       }
+                       if(d.labels[0] === 'Applyer') {
+                           return '#000000';
+                       }
+                       if(d.labels[0] === 'Person') {
+                           return '#000000';
+                       }
+                       if(d.labels[0] === 'Company') {
+                           return '#000000';
+                       }
+                       if(d.labels[0] === 'Apply') {
+                           return '#000000';
+                       }
                        return '#ffffff';
                    })
                    .attr('font-size', function(d) {
+                       if(d.labels[0] === 'Applyer') {
+                           return icon(d) ? ((options.nodeRadius) + 'px') : '15px';
+                       }
                        return icon(d) ? (options.nodeRadius + 'px') : '10px';
                    })
                    .attr('pointer-events', 'none')
                    .attr('text-anchor', 'middle')
                    .attr('y', function(d) {
-                       return icon(d) ? (parseInt(Math.round(options.nodeRadius * 0.32)) + 'px') : '30px';
+                       return icon(d) ? (parseInt(Math.round(options.nodeRadius * 0.32)) + 'px') : '4px';
                    })
                    .html(function(d) {
                        var _icon = icon(d);
+                       if(d.labels[0] === 'Address') {
+                           return _icon ? '&#x' + _icon : d.properties['详细地址'];
+                       }
+                       if(d.labels[0] === 'Phone') {
+                           return _icon ? '&#x' + _icon : d.properties['号码'];
+                       }
+                       if(d.labels[0] === 'Applyer' || d.labels[0] === 'Person') {
+                           return _icon ? '&#x' + _icon : d.properties['姓名'];
+                       }
+                       if(d.labels[0] === 'Company') {
+                           return _icon ? '&#x' + _icon : d.properties['公司名称'];
+                       }
+                       if(d.labels[0] === 'Apply') {
+                           return _icon ? '&#x' + _icon : d.properties['申请id'];
+                       }
                        return _icon ? '&#x' + _icon : d.properties['详细地址'];
                    });
     }
@@ -345,7 +378,8 @@ function Neo4jD3(_selector, _options) {
         return [
             '#68bdf6', // light blue
             '#6dce9e', // green #1
-            '#faafc2', // light pink
+            '#fcda19', // dark yellow
+            '#65b9f3', // dark blue
             '#f2baf6', // purple
             '#ff928c', // light red
             '#fcea7e', // light yellow
@@ -357,8 +391,8 @@ function Neo4jD3(_selector, _options) {
             '#ced2d9', // light gray
             '#e84646', // dark red
             '#fa5f86', // dark pink
+            '#faafc2', // light pink
             '#ffab1a', // dark orange
-            '#fcda19', // dark yellow
             '#797b80', // black
             '#c9d96f', // pistacchio
             '#47991f', // green #3

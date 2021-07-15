@@ -5,18 +5,80 @@
             "graph": {
                 "nodes": [{
                     "id": "1",
-                    "labels": ["APPLYER"],
+                    "labels": ["Applyer"],
                     "properties": {
-                        "name": "张三"
+                        "姓名": "王大卫",
+                        "证件号码": "310100199509192134",
+                        "性别": "男"
                     }
                 }, {
                     "id": "2",
                     "labels": ["Phone"],
                     "properties": {
-                        "value": "555-555-5555"
+                        "号码": 62311010,
+                        "类型": "固话"
                     }
                 }, {
                     "id": "3",
+                    "labels": ["Address"],
+                    "properties": {
+                        "详细地址": "静安区康定路1238号",
+                        "province": "上海市",
+                        "city": "上海市"
+                    }
+                }, {
+                    "id": "4",
+                    "labels": ["Address"],
+                    "properties": {
+                        "详细地址": "静安区康定路1437号",
+                        "province": "上海市",
+                        "city": "上海市"
+                    }
+                }, {
+                    "id": "5",
+                    "labels": ["Person"],
+                    "properties": {
+                        "姓名": "李安妮",
+                        "证件号码": "310100199510192144",
+                        "性别": "女"
+                    }
+                }, {
+                    "id": "6",
+                    "labels": ["Company"],
+                    "properties": {
+                        "公司名称": "上汽财务"
+                    }
+                }, {
+                    "id": "7",
+                    "labels": ["Person"],
+                    "properties": {
+                        "姓名": "李彼得",
+                        "证件号码": "310100199509202154",
+                        "性别": "男"
+                    }
+                }, {
+                    "id": "8",
+                    "labels": ["Apply"],
+                    "properties": {
+                        "申请id": "7402394",
+                        "申请时间": "2021-05-11"
+                    }
+                }, {
+                    "id": "9",
+                    "labels": ["Phone"],
+                    "properties": {
+                        "号码": 13523423123,
+                        "类型": "手机"
+                    }
+                }, {
+                    "id": "10",
+                    "labels": ["Phone"],
+                    "properties": {
+                        "号码": 62311999,
+                        "类型": "固话"
+                    }
+                }, {
+                    "id": "11",
                     "labels": ["Address"],
                     "properties": {
                         "详细地址": "静安区康定路1199号",
@@ -24,94 +86,187 @@
                         "city": "上海市"
                     }
                 }, {
-                    "id": "4",
-                    "labels": ["BirthDate"],
+                    "id": "12",
+                    "labels": ["Apply"],
                     "properties": {
-                        "value": "2021-7-14"
+                        "申请id": "7402134",
+                        "申请时间": "2021-04-10"
                     }
                 }, {
-                    "id": "5",
-                    "labels": ["Password"],
+                    "id": "13",
+                    "labels": ["Person"],
                     "properties": {
-                        "value": "123456"
+                        "姓名": "赵珍妮弗",
+                        "证件号码": "310100199509202224",
+                        "性别": "女"
                     }
                 }, {
-                    "id": "6",
-                    "labels": ["Device"],
+                    "id": "14",
+                    "labels": ["Address"],
                     "properties": {
-                        "value": "eisman"
+                        "详细地址": "江苏路452号",
+                        "province": "上海市",
+                        "city": "上海市"
                     }
                 }, {
-                    "id": "7",
-                    "labels": ["SecurityChallengeAnswer"],
+                    "id": "15",
+                    "labels": ["Person"],
                     "properties": {
-                        "value": "hCxh4LItmWefWg71JiYUaxxFrCRaqQIDEoEbeqHa"
+                        "姓名": "周爱丽丝",
+                        "证件号码": "310100199509202484",
+                        "性别": "女"
                     }
                 }, {
-                    "id": "8",
-                    "labels": ["Project"],
+                    "id": "16",
+                    "labels": ["Apply"],
                     "properties": {
-                        "name": "neo4jd3",
-                        "title": "neo4jd3.js",
-                        "description": "Neo4j graph visualization using D3.js.",
-                        "url": "https://eisman.github.io/neo4jd3"
+                        "申请id": "7402434",
+                        "申请时间": "2021-03-12"
                     }
-                }],
+                }, {
+                    "id": "17",
+                    "labels": ["Phone"],
+                    "properties": {
+                        "号码": 13521233123,
+                        "类型": "手机"
+                    }
+                }
+                ],
                 "relationships": [{
                     "id": "1",
-                    "type": "HAS_PHONE_NUMBER",
+                    "type": "公司电话",
                     "startNode": "1",
                     "endNode": "2",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-05-11"
                     }
                 }, {
                     "id": "2",
-                    "type": "HAS_ADDRESS",
+                    "type": ["家庭住址","户籍地"],
                     "startNode": "1",
                     "endNode": "3",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-05-11"
                     }
                 }, {
                     "id": "3",
-                    "type": "HAS_BIRTH_DATE",
+                    "type": "工作地址",
                     "startNode": "1",
                     "endNode": "4",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-05-11"
                     }
                 }, {
                     "id": "4",
-                    "type": "HAS_PASSWORD",
+                    "type": "配偶",
                     "startNode": "1",
                     "endNode": "5",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-05-11"
                     }
                 }, {
                     "id": "5",
-                    "type": "USED_DEVICE",
+                    "type": "工作单位",
                     "startNode": "1",
                     "endNode": "6",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-05-11"
                     }
                 }, {
                     "id": "6",
-                    "type": "HAS_SECURITY_ANSWER",
-                    "startNode": "1",
-                    "endNode": "7",
+                    "type": "公司电话",
+                    "startNode": "7",
+                    "endNode": "2",
                     "properties": {
-                        "from": 1473581532586
+                        "time": "2021-04-10"
                     }
                 }, {
                     "id": "7",
-                    "type": "DEVELOPES",
+                    "type": "申请单",
                     "startNode": "1",
                     "endNode": "8",
                     "properties": {
-                        "from": 1470002400000
+                        "time": "2021-05-11"
+                    }
+                }, {
+                    "id": "8",
+                    "type": "联系方式",
+                    "startNode": "1",
+                    "endNode": "9",
+                    "properties": {
+                        "time": "2021-05-11"
+                    }
+                }, {
+                    "id": "9",
+                    "type": "联系方式",
+                    "startNode": "1",
+                    "endNode": "10",
+                    "properties": {
+                        "time": "2021-05-11"
+                    }
+                }, {
+                    "id": "10",
+                    "type": "工作单位",
+                    "startNode": "7",
+                    "endNode": "11",
+                    "properties": {
+                        "time": "2021-04-10"
+                    }
+                }, {
+                    "id": "11",
+                    "type": "申请单",
+                    "startNode": "7",
+                    "endNode": "12",
+                    "properties": {
+                        "time": "2021-04-10"
+                    }
+                }, {
+                    "id": "12",
+                    "type": "配偶",
+                    "startNode": "7",
+                    "endNode": "13",
+                    "properties": {
+                        "time": "2021-04-10"
+                    }
+                }, {
+                    "id": "13",
+                    "type": "工作单位",
+                    "startNode": "7",
+                    "endNode": "6",
+                    "properties": {
+                        "time": "2021-04-10"
+                    }
+                }, {
+                    "id": "14",
+                    "type": "家庭住址",
+                    "startNode": "7",
+                    "endNode": "14",
+                    "properties": {
+                        "time": "2021-04-10"
+                    }
+                }, {
+                    "id": "15",
+                    "type": "家庭住址",
+                    "startNode": "15",
+                    "endNode": "3",
+                    "properties": {
+                        "time": "2021-03-12"
+                    }
+                }, {
+                    "id": "16",
+                    "type": "申请单",
+                    "startNode": "15",
+                    "endNode": "16",
+                    "properties": {
+                        "time": "2021-03-12"
+                    }
+                }, {
+                    "id": "16",
+                    "type": "联系方式",
+                    "startNode": "15",
+                    "endNode": "17",
+                    "properties": {
+                        "time": "2021-03-12"
                     }
                 }]
             }
