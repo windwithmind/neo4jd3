@@ -282,7 +282,7 @@ function Neo4jD3(_selector, _options) {
                            return _icon ? '&#x' + _icon : d.properties['公司名称'];
                        }
                        if(d.labels[0] === 'Apply') {
-                           return _icon ? '&#x' + _icon : d.properties['申请id'];
+                           return _icon ? '&#x' + _icon : d.properties['申请编号'];
                        }
                        return _icon ? '&#x' + _icon : d.properties['详细地址'];
                    });
@@ -378,9 +378,9 @@ function Neo4jD3(_selector, _options) {
         return [
             '#68bdf6', // light blue
             '#6dce9e', // green #1
-            '#fcda19', // dark yellow
+            '#decbad', // dark yellow
             '#65b9f3', // dark blue
-            '#f2baf6', // purple
+            '#efb6ce', // purple
             '#ff928c', // light red
             '#fcea7e', // light yellow
             '#ffc766', // light orange
